@@ -46,7 +46,11 @@ export default function Login({
 
     if (error) {
       try {
-      return redirect("/login?message=Could not authenticate user");
+        return redirect("/login?message=Could not authenticate user");
+      } catch (redirectError) {
+        console.error("Login error:", error.message);
+        return redirect(`/login?message=${encodeURIComponent(error.message)}`);
+      }
     }
 
     return redirect("/login?message=Check email to continue sign in process");
