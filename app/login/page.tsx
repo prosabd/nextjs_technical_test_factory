@@ -53,8 +53,14 @@ export default function Login({
       }
     }
 
-    return redirect("/login?message=Check email to continue sign in process");
+    return redirect("/login?message=Redirecting to main protected page in 5 seconds...");
   };
+
+  if(searchParams.message == 'Redirecting to notes page in 5 seconds...'){
+    setTimeout(() => {
+      redirect("/protected");
+    }, 5000);
+  }
 
   return (
     <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
