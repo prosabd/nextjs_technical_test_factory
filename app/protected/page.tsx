@@ -18,7 +18,7 @@ export default async function ProtectedPage() {
 
   return (
     <div className="flex-1 w-full flex flex-col gap-20 items-center">
-      <Header pathname="/protected" />
+      <Header pathname="/protected" isConnected={true} />
 
       <div className="flex-1 flex flex-col gap-20 max-w-4xl px-3">
         <main className="flex-1 flex flex-col gap-6">
