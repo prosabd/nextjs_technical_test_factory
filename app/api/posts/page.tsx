@@ -1,4 +1,5 @@
 //Code posts page get elements from API
+import Header from "@/components/Header";
 import { Card } from "flowbite-react";
 
 export async function getPosts(){
@@ -20,12 +21,13 @@ export default async function Posts() {
 
     return (
         <div className="w-full justify-content-center">
-            <h3 className="text-4xl font-bold text-center mt-2">Posts From API JsonPlaceHolder</h3>
+            <Header />
+            <h3 className="text-4xl font-bold text-center mt-4">(Get Method) Posts From API JsonPlaceHolder</h3>
             <hr className="my-4 border-gray-300" />
             <div className="flex flex-wrap -mx-2 px-2">
                 {data && data.map((post: any) => (
                     <div key={post.id} className="p-2 w-full md:w-1/3">
-                        <Card className="px-2 ml-2 mt-3 rounded-md no-underlinewhy elements do not display on wrap or like a row  (2 or 3 per row">
+                        <Card className="px-2 ml-2 mt-3 rounded-md no-underline">
                             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 {post.title}
                             </h5>
