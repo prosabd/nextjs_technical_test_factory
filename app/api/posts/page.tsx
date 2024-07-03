@@ -3,19 +3,7 @@ import Header from "@/components/Header";
 import { Card } from "flowbite-react";
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
-
-export async function getPosts(){
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-    const data = await res.json();
-    
-    return data;
-}
-export async function getUsers(){
-    const res = await fetch('https://jsonplaceholder.typicode.com/users');
-    const data = await res.json();
-    
-    return data;
-}
+import { getPosts, getUsers } from "@/utils/apiHelpers";
 
 export default async function Posts() {
     const supabase = createClient();
