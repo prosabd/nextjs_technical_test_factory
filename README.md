@@ -9,8 +9,22 @@ Posts : use get method to fetch elements of JsonPlaceHolder (free fake API) (htt
 PostVerif : use post method to get a prediction to know if a content (type : string) is unnaceptable and it score of the gravity, with the Logora API (https://moderation.logora.fr/docs/#/)
 
 ## Getting Started
+ 
+First, install the environnement:
 
-First, run the development server:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+and set the .env.local with yours own personnals supabase credentials.
+
+After, run the development server:
 
 ```bash
 npm run dev
