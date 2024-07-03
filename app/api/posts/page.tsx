@@ -1,6 +1,8 @@
 //Code posts page get elements from API
 import Header from "@/components/Header";
 import { Card } from "flowbite-react";
+import { redirect } from "next/navigation";
+import { createClient } from "@/utils/supabase/server";
 
 export async function getPosts(){
     const res = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -16,12 +18,22 @@ export async function getUsers(){
 }
 
 export default async function Posts() {
+    const supabase = createClient();
+
+    const {
+        data: { user },
+    } = await supabase.auth.getUser();
+
+    if (!user) {
+        return redirect("/login");
+    }
+
     const data = await getPosts();
     const users = await getUsers();
 
     return (
         <div className="w-full justify-content-center">
-            <Header />
+            <Header isConnected={true}/>
             <h3 className="text-4xl font-bold text-center mt-4">(Get Method) Posts From API JsonPlaceHolder</h3>
             <hr className="my-4 border-gray-300" />
             <div className="flex flex-wrap -mx-2 px-2">

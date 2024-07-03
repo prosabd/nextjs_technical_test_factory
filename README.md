@@ -1,4 +1,12 @@
-This is a [Next.js] project for a technical test for FACTORY company.
+This is a [Next.js] project for a technical test for FACTORY company. (i did not add so many comments because of lack of time )
+
+## Quickly Features
+
+Notes page : get elements of the created table on supabase
+
+Posts : use get method to fetch elements of JsonPlaceHolder (free fake API) (https://jsonplaceholder.typicode.com)
+
+PostVerif : use post method to get a prediction to know if a content (type : string) is unnaceptable and it score of the gravity, with the Logora API (https://moderation.logora.fr/docs/#/)
 
 ## Getting Started
 
